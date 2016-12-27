@@ -1,0 +1,110 @@
+@font-face {
+    font-family: FiraSans-Regular;
+    src: url("../Assest/Fonts/fira-sans/FiraSans-Regular.ttf") format('truetype');
+    color:black;
+}
+@font-face {
+    font-family: FiraSans-Light;
+    src: url("../Assest/Fonts/fira-sans/FiraSans-Light.ttf") format('truetype');
+    color:black;
+}
+
+*{
+
+  padding : 0;
+  margin : 0 0 0 0;
+}
+
+#getMap{
+  position:fixed!important;
+  width:100%;
+  height : 100%;
+
+}
+
+#logo{
+  width:120px;
+  height:80px;
+  margin-left: 60px;
+}
+
+#user-icon{
+  width:60px;
+  height:60px;
+  background-color:rgba(216, 216, 216, 1);
+  border-radius:50%;
+  padding:10px 20px;
+  margin : -10px 0;
+}
+
+#ellipsis-icon{
+  padding:0 0 0 10px;
+}
+
+.header{
+  padding : 10px;
+}
+
+.header .searchBar{
+  margin: 20px 0;
+
+}
+
+.searchBar .col-md-10,.col-md-2{
+  padding : 0;
+}
+
+.addon-box input[type = 'text']{
+  width:360px;
+  height:40px;
+  border:1px solid rgba(208,208,208,1);
+  border-right:none;
+  border-radius:0;
+}
+
+.addon-box .input-group-addon{
+  border:1px solid rgba(208,208,208,1);
+  border-left:none;
+  background-color:transparent;
+  border-radius:0;
+}
+
+.dashboard{
+  background-color:rgba(243,243,243,1);
+}
+
+.dashboard span{
+  padding: 18px;
+}
+
+.dashboard-menu{
+  width:65px;
+  height:75px;
+  background-color:rgba(132,184,76,1);
+
+}
+
+.dashboard-title{
+  font-family: FiraSans-Light;
+  font-size: 26px;
+  color: rgba(74,74,74,1);
+  font-weight: bold;
+  padding : 16px 18px;
+}
+
+.info-bar{
+  position:absolute;
+  background-color:rgba(255, 255, 255, 0.9);
+  padding:20px;
+  font-family: FiraSans-Regular;
+  font-size: 22px;
+}
+
+.info-bar .info-report{
+  font-family: FiraSans-Light;
+  font-size: 40px;
+}
+
+.info-bar .info-subtitle{
+  font-size: 10px;
+}
