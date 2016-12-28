@@ -14,32 +14,18 @@
   <body ng-app = 'innoApp'>
 
 
-  <div class = "container-fluid">
+    <div class = "container-fluid">
 
-    <!-- Div for logo and search bar -->
-    <inno-header></inno-header>
+      <!-- Div for logo and search bar -->
+      <inno-header></inno-header>
 
-    <!-- Div for Nav-bar -->
-    <div class = "row dashboard" >
-      <span class = 'float-sm-left dashboard-menu'>
-        <i style="color:white" class="fa fa-bars fa-2x" aria-hidden="true"></i>
-      </span>
-      <span class = 'float-sm-left dashboard-title'>
-        Farmer Dashboard
-      </span>
-      <span class = 'float-sm-right'>
-        <i class="fa fa-th-large fa-2x" aria-hidden="true"></i>
-      </span>
-      <span class = 'float-sm-right'>
-        <i class="fa fa-map-marker fa-2x" aria-hidden="true" style = "color:rgba(66,160,214,1)"></i>
-      </span>
+      <!-- Div for Nav-bar -->
+      <inno-nav></inno-nav>
+
+      <!-- Div for Google Map integrity  -->
+      <ui-view></ui-view>
 
     </div>
-
-    <!-- Div for Google Map integrity  -->
-    <ui-view></ui-view>
-
-  </div>
     <!-- Google Maps API-->
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyBiNGPOeuTfahKNAEVGK79UQbw1iauHjj0"></script>
     <!-- jquery JS-->
@@ -50,12 +36,17 @@
     <!-- AngularJS min and Angular UI Router-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+    <!-- AngularJS Maps dependency min -->
     <script src='JS/ng-map.min.js'></script>
 
 
     <!-- Custom Script files-->
+    <!--innoApp Module-->
     <script src="JS/app.js"></script>
+    <!-- stateroute config -->
     <script src="JS/app.config.uiRoute.js"></script>
+    <!-- Directives-->
     <script src="JS/app.directive.innoHeader.js"></script>
+    <script src="JS/app.directive.innoNav.js"></script>
   </body>
 </html>

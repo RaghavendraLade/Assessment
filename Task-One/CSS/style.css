@@ -34,11 +34,11 @@
   background-color:rgba(216, 216, 216, 1);
   border-radius:50%;
   padding:10px 20px;
-  margin : -10px 0;
+  margin: -10px 0 -10px 10px;
 }
 
 #ellipsis-icon{
-  padding:0 0 0 10px;
+  padding:5px 0 0 10px;
 }
 
 .header{
@@ -50,23 +50,24 @@
 
 }
 
-.searchBar .col-md-10,.col-md-2{
-  padding : 0;
-}
-
 .addon-box input[type = 'text']{
   width:360px;
   height:40px;
-  border:1px solid rgba(208,208,208,1);
-  border-right:none;
+  border:none;
   border-radius:0;
 }
 
-.addon-box .input-group-addon{
+.addon-box{
+  padding : 0 10px;
   border:1px solid rgba(208,208,208,1);
-  border-left:none;
-  background-color:transparent;
   border-radius:0;
+  margin-right:10px;
+}
+
+.addon-box .fa-search{
+
+  background-color:transparent;
+
 }
 
 .dashboard{
