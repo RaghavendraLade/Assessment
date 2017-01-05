@@ -1,0 +1,46 @@
+<div class="modal-header">
+  <button type="button" class="close"  aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title">Payment Parameters</h4>
+</div>
+<div class="modal-body row form-group">
+  <div class='col-md-6'>
+    <span>Growth Type<span>
+    <select ng-model = "info.growthType" class="form-control">
+      <option ng-repeat = "growth in data[4].result">{{growth.value}}</option>
+    </select>
+  </div>
+  <div class='col-md-6'>
+    <span>Fixed Growth<span>
+    <input type = 'number' ng-model = "info.fixedGrowth" class="form-control">
+  </div>
+  <div class='col-md-6'>
+    <span>Number of Schedules<span>
+    <input type = 'number' ng-model = "info.schedules" class="form-control">
+  </div>
+  <div class='col-md-6'>
+    <span>Adjust Every (x) months<span>
+    <input type = 'number' ng-model = "info.months" class="form-control">
+  </div>
+  <div class='col-md-4'>
+    <span>Change Amount Basis<span>
+    <select ng-model = "info.changeBasis" class="form-control">
+      <option ng-repeat = "growth in data[3].result">{{growth.value}}</option>
+    </select>
+  </div>
+  <div class='col-md-4'>
+
+    <div class = 'col-md-6'>
+      <span>Contract Rentable<span>
+      <input type = 'number' ng-model = "info.rent" class="form-control">
+    </div>
+    <div class = 'col-md-6'>
+      square-feet
+    </div>
+  </div>
+  <div class='col-md-4'>
+    <span>Amount per Basis<span>
+    <input type = 'number' ng-model = "info.amountBasis" class="form-control">
+  </div>
+</div>

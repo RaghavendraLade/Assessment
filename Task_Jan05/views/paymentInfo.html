@@ -1,0 +1,72 @@
+<div class="modal-header">
+  <button type="button" class="close"  aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title">Payment Information</h4>
+</div>
+<div class="modal-body row form-group">
+  <div class='col-md-6 '>
+    <span>Payment Type<sup>*</sup><span>
+    <select class="form-control" ng-model = "info.paymentType" >
+      <option ng-repeat = "payType in data[1]">{{payType.path}}</option>
+
+    </select>
+  </div>
+  <div class='col-md-6'>
+    <span>Accounting Type<sup>*</sup><span>
+    <select ng-model = "info.accountingType" class="form-control" >
+      <option ng-repeat = "acType in data[2].result">{{acType.value}}</option>
+    </select>
+  </div>
+  <div class = 'row container'>
+  <div class='col-md-4'>
+    <span>Frequency<sup>*</sup><span>
+    <select ng-model = "info.frequencyType" class="form-control">
+      <option ng-repeat = "fqType in data[0]">{{fqType.path}}</option>
+    </select>
+  </div>
+  <div class='col-md-4'>
+    <span>Period Start Date<sup>*</sup><span>
+      <div class='input-group' id='datetimepicker1'>
+          <input type='date' class="form-control" ng-model = "info.paymentStart">
+          <span class="input-group-addon">
+              <i class="fa fa-calendar"></i>
+          </span>
+      </div>
+  </div>
+  <div class='col-md-4'>
+    <span>Payment Timing<sup>*</sup><span>
+    <select ng-model = "info.paymentTiming" class="form-control" >
+      <option ng-repeat = "payTime in data[7].result">{{payTime.value}}</option>
+    </select>
+  </div>
+  </div>
+  <div class='col-md-4'>
+    <span>Payment Due On<sup>*</sup><span>
+    <select ng-model = "info.paymentDueOn" class="form-control">
+      <option ng-repeat = "payDueOn in data[6].result">{{payDueOn.value}}</option>
+    </select>
+  </div>
+  <div class='col-md-4'>
+    <span>Payment Due Day<sup>*</sup><span>
+    <select ng-model = "info.paymentDueDay" class="form-control">
+      <option ng-repeat = "payDueDay in data[5].result">{{payDueDay.value}}</option>
+    </select>
+  </div>
+  <div class='col-md-4'>
+    <span>Accounting Cost Center<sup>*</sup><span>
+    <input type = 'text' ng-model = "info.accountCost" class="form-control">
+  </div>
+  <div class='col-md-4'>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" ng-model ="info.termPay" class="form-check-input">
+        Option Term Payment
+      </label>
+    </div>
+  </div>
+  <div class='col-md-12'>
+    <span>Description<sup>*</sup><span>
+    <textarea ng-model='info.desc' class="form-control" rows="3"></textarea>
+  </div>
+</div>
