@@ -33,8 +33,26 @@
             $scope.form = true;
           }
         }
+      }
+      $scope.save = true;
+      $scope.editFun = function(editData,payType,index){
+        $scope.info = angular.copy(editData);
+        $('#open-form').modal('show');
+        $scope.save = false;
+        $scope.saveEditInfo = function(editedInfo){
+          ($scope.tableInfo[payType])[index] = angular.copy(editedInfo);
+          $scope.info = {};
+          $scope.form = true;
+          $scope.save = true;
+        }
+      }
+
+      $scope.delFun = function(key,index){
+        ($scope.tableInfo[key]).splice(index,1)
 
       }
+
+
     }]);
 
 

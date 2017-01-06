@@ -35,16 +35,17 @@
               <i ng-hide = 'down' class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
             </td>
           </tr>
-          <!-- = (down == -1)? $index: -1 -->
-
-            <tr ng-repeat = 'rowData in value' ng-hide = 'down'>
+          <tr ng-repeat = 'rowData in value' ng-hide = 'down'>
               <td></td>
               <td>{{rowData.frequencyType}}</td>
               <td>{{rowData.paymentStart}}</td>
               <td>End Date</td>
               <td>0.00</td>
-              <td><i class="fa fa-trash-o" aria-hidden="true"></i><i class="fa fa-pencil" aria-hidden="true"></i></td>
-            </tr>
+              <td>
+                <span ng-click = 'editFun(rowData,key,$index)'><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                <span ng-click = 'delFun(key,$index)'><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+              </td>
+          </tr>
 
         </tbody>
         <tr class="table-danger">
@@ -68,6 +69,8 @@
               <i ng-show = 'form' class="fa fa-angle-right fa-2x"></i>
               <i ng-hide = 'form' class="fa fa-angle-left fa-2x"></i></button>
             <button ng-hide = 'form' type="button" class="btn btn-secondary" data-dismiss="modal" ng-click = 'generate(info)'>Generate</button>
+            <button ng-hide = 'save' type="button" class="btn btn-secondary" data-dismiss="modal" ng-click = 'saveEditInfo(info)'>Save</button>
+
           </div>
         </div>
       </div>
