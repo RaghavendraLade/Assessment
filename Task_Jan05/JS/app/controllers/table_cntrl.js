@@ -18,38 +18,50 @@
 
         $scope.data = data;
       });
-      $scope.form = true;
+      $scope.formChange = true;
       $scope.generate = function(saveIt){
         var savedInfo = angular.copy(saveIt)
         if(savedInfo.paymentType != undefined){
           if(savedInfo.paymentType in $scope.tableInfo){
             $scope.tableInfo[savedInfo.paymentType].push(savedInfo);
-            $scope.info = {};
-            $scope.form = true;
           }else{
             $scope.tableInfo[savedInfo.paymentType] = [];
             $scope.tableInfo[savedInfo.paymentType].push(savedInfo);
-            $scope.info = {};
-            $scope.form = true;
           }
+          $scope.info = {};
+          $scope.formChange = true;
+          $('#open-form').modal('hide');
         }
       }
-      $scope.save = true;
+      $scope.editPage = true;
       $scope.editFun = function(editData,payType,index){
+        $scope.formChange = true;
         $scope.info = angular.copy(editData);
         $('#open-form').modal('show');
-        $scope.save = false;
+        $scope.editPage = false;
         $scope.saveEditInfo = function(editedInfo){
           ($scope.tableInfo[payType])[index] = angular.copy(editedInfo);
           $scope.info = {};
-          $scope.form = true;
-          $scope.save = true;
+          $scope.formChange = true;
+          $scope.editPage = true;
+          $('#open-form').modal('hide');
         }
       }
 
       $scope.delFun = function(key,index){
-        ($scope.tableInfo[key]).splice(index,1)
+        $('#del-confirm-box').modal('show');
+        $scope.confirmDel = function(){
+          ($scope.tableInfo[key]).splice(index,1);
+          $('#del-confirm-box').modal('hide');
 
+        }
+      }
+
+      $scope.dismissModal = function(){
+        $('#open-form').modal('hide');
+        $scope.info = {};
+        $scope.formChange = true;
+        $scope.editPage = true;
       }
 
 
