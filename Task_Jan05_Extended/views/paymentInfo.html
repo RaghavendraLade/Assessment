@@ -1,0 +1,84 @@
+<div class="modal-header">
+  <button type="button" class="close" data-toggle = 'modal' data-target = '#unsaved-confirm-box' aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title">Payment Information</h4>
+</div>
+<div class="modal-body row form-group form-content">
+  <form name = '$parent.formOne'>
+  <div class = 'row col-md-12'>
+    <!-- Payment Type Dropdown input-->
+    <div class='col-md-6 form-row'>
+      <span>Payment Type<span class = "sup">*</span><span>
+      <in-filter-choose options = 'data[1]' name = 'payType' selected = '$parent.info.paymentType'></in-filter-choose>
+      <span ng-show = '$parent.formOne.payType.$error.required' class = 'error'>Please fill out this field.</span>
+    </div>
+    <!-- Accounting Type Dropdown input-->
+    <div class='col-md-6 form-row'>
+      <span>Accounting Type<span class = "sup">*</span><span>
+      <in-filter-choose options = 'data[2]' name = 'acType' selected = '$parent.info.accountingType'></in-filter-choose>
+      <span ng-show = '$parent.formOne.acType.$error.required' class = 'error'>Please fill out this field.</span>
+    </div>
+  </div>
+  <div class = 'row col-md-12'>
+    <!-- Frequency Dropdown input-->
+    <div class='col-md-4 form-row'>
+      <span>Frequency<span class = "sup">*</span><span>
+      <in-filter-choose options = 'data[0]' on-change = '$parent.changeInFq(val)' name = 'fqType' selected = '$parent.info.frequencyType'></in-filter-choose>
+      <span ng-show = '$parent.formOne.fqType.$error.required' class = 'error'>Please fill out this field.</span>
+    </div>
+    <!-- Period Start Date input-->
+    <div class='col-md-4 form-row'>
+      <span>Period Start Date<span class = "sup">*</span><span>
+
+      <div class="input-group date" data-provide="datepicker" >
+        <input type="text" name = 'payStart' class="form-control" ng-model="$parent.info.paymentStart" placeholder="mm/dd/yyyy" required = 'required'>
+        <span class="input-group-addon">
+          <i class="fa fa-calendar-o"></i>
+        </span>
+      </div>
+      <span ng-show = '$parent.formOne.payStart.$error.required' class = 'error'>Please fill out this field.</span>
+    </div>
+    <!-- Payment Timing input-->
+    <div class='col-md-4 form-row'>
+      <span>Payment Timing<span class = "sup">*</span><span>
+      <in-filter-choose options = 'data[7]' name = 'payTime' selected = '$parent.info.paymentTiming'></in-filter-choose>
+      <span ng-show = '$parent.formOne.payTime.$error.required' class = 'error'>Please fill out this field.</span>
+    </div>
+
+  </div>
+  <div class = 'row col-md-12'>
+    <!-- Payment Due On input-->
+    <div ng-if = '!(($parent.info.frequencyType == "Other")||($parent.info.frequencyType =="Monthly"))' class='col-md-4 form-row'>
+      <span>Payment Due On<span class = "sup">*</span><span>
+      <in-filter-choose options = 'data[6]' name = 'payDueOn' selected = '$parent.info.paymentDueOn'></in-filter-choose>
+      <span ng-show = '$parent.formOne.payDueOn.$error.required' class = 'error'>Please fill out this field.</span>
+    </div>
+    <!-- Payment Due Day input-->
+    <div ng-if = '$parent.info.frequencyType != "Other"' class='col-md-4 form-row'>
+      <span>Payment Due Day<span class = "sup">*</span><span>
+      <in-filter-choose options = 'data[5]' name = 'payDueDay' selected = '$parent.info.paymentDueDay'></in-filter-choose>
+      <span ng-show = '$parent.formOne.payDueDay.$error.required' class = 'error'>Please fill out this field.</span>
+    </div>
+    <!-- Accounting Cost Center input-->
+    <div class='col-md-4 form-row'>
+      <span>Accounting Cost Center<span>
+      <input type = 'text' ng-model = "$parent.info.accountCost" class="form-control">
+    </div>
+    <!-- Option Term Payment check box input-->
+    <div class='col-md-4' style= 'margin-top:20px'>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" ng-model ="$parent.info.termPay" class="form-check-input">
+          Option Term Payment
+        </label>
+      </div>
+    </div>
+  </div>
+  <!-- Description TextArea-->
+  <div class='col-md-12'>
+    <span>Description<span>
+    <textarea ng-model='$parent.info.desc' class="form-control" rows="3"></textarea>
+  </div>
+  </form>
+</div>

@@ -1,0 +1,47 @@
+<div class="modal-header">
+  <button type="button" class="close" data-toggle = 'modal' data-target = '#unsaved-confirm-box' aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title">Payment Parameters</h4>
+</div>
+<div class="modal-body row form-group form-content">
+  <form name='$parent.formTwo'>
+    <div ng-if = 'info.frequencyType != "Other"' class='col-md-6'>
+      <span>Growth Type<span>
+      <in-filter-choose options = 'data[4]' selected = 'info.growthType'></in-filter-choose>
+    </div>
+    <div ng-if = 'info.frequencyType != "Other"' class='col-md-6'>
+      <span>
+        <span>{{(info.growthType=="Fixed")?'Fixed':'Percent' }}</span> Growth
+      <span>
+      <input type = 'number' ng-model = "info.fixedGrowth" class="form-control">
+    </div>
+    <div ng-if = 'info.frequencyType != "Other"' class='col-md-6'>
+      <span>Number of Schedules<span>
+      <input type = 'number' ng-model = "info.schedules" class="form-control">
+    </div>
+    <div ng-if = 'info.frequencyType != "Other"' class='col-md-6'>
+      <span>Adjust Every (x) months<span>
+      <input type = 'number' ng-model = "info.months" class="form-control">
+    </div>
+    <div ng-if = 'info.frequencyType != "Other"' class='col-md-4'>
+      <span>Change Amount Basis<span class = "sup">*</span><span>
+      <in-filter-choose options = 'data[3]' name = 'changeAmnt' selected = 'info.changeBasis'></in-filter-choose>
+      <span ng-show = '$parent.formTwo.changeAmnt.$error.required' class = 'error'>Please fill out this field.</span>
+    </div>
+    <div ng-if = 'info.frequencyType != "Other"' class='col-md-4'>
+
+      <div class = 'col-md-6'>
+        <span>Contract Rentable<span>
+        <input type = 'number' ng-model = "info.rent" class="form-control">
+      </div>
+      <div class = 'col-md-6'>
+        square-feet
+      </div>
+    </div>
+    <div class='col-md-4'>
+      <span>Amount per Basis<span>
+      <input type = 'number' ng-model = "info.amountBasis" class="form-control">
+    </div>
+  </form>
+</div>

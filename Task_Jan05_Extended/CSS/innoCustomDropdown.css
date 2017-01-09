@@ -1,0 +1,28 @@
+.inno-custom-input{
+  padding-left : 0;
+}
+
+.inno-custom-input .remove-border-bg{
+  border:none;
+  background-color: #fff;
+}
+
+.inno-custom-input .custom-content{
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
+}
+.inno-custom-input .custom-content .custom-field{
+  cursor: default;
+}
+
+.inno-custom-input .select-menu{
+  overflow-y: auto;
+  height: 250px;
+  padding: 10px;
+  box-shadow: 3px 5px 5px 0px rgba(172, 224, 221, 0.62);
+}
+
+.inno-custom-input .select-menu .menu-list{
+  list-style: none;
+  padding-left: 20px;
+}
