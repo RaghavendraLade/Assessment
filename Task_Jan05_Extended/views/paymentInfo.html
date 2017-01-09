@@ -10,13 +10,13 @@
     <!-- Payment Type Dropdown input-->
     <div class='col-md-6 form-row'>
       <span>Payment Type<span class = "sup">*</span><span>
-      <in-filter-choose options = 'data[1]' name = 'payType' selected = '$parent.info.paymentType'></in-filter-choose>
+      <in-filter-choose options = 'data[1]' name = 'payType' selected = '$parent.info.paymentType' required = 'true'></in-filter-choose>
       <span ng-show = '$parent.formOne.payType.$error.required' class = 'error'>Please fill out this field.</span>
     </div>
     <!-- Accounting Type Dropdown input-->
     <div class='col-md-6 form-row'>
       <span>Accounting Type<span class = "sup">*</span><span>
-      <in-filter-choose options = 'data[2]' name = 'acType' selected = '$parent.info.accountingType'></in-filter-choose>
+      <in-filter-choose options = 'data[2]' name = 'acType' selected = '$parent.info.accountingType' required = 'true'></in-filter-choose>
       <span ng-show = '$parent.formOne.acType.$error.required' class = 'error'>Please fill out this field.</span>
     </div>
   </div>
@@ -24,7 +24,7 @@
     <!-- Frequency Dropdown input-->
     <div class='col-md-4 form-row'>
       <span>Frequency<span class = "sup">*</span><span>
-      <in-filter-choose options = 'data[0]' on-change = '$parent.changeInFq(val)' name = 'fqType' selected = '$parent.info.frequencyType'></in-filter-choose>
+      <in-filter-choose options = 'data[0]' on-change = '$parent.changeInFq()' name = 'fqType' selected = '$parent.info.frequencyType' required = 'true'></in-filter-choose>
       <span ng-show = '$parent.formOne.fqType.$error.required' class = 'error'>Please fill out this field.</span>
     </div>
     <!-- Period Start Date input-->
@@ -42,7 +42,7 @@
     <!-- Payment Timing input-->
     <div class='col-md-4 form-row'>
       <span>Payment Timing<span class = "sup">*</span><span>
-      <in-filter-choose options = 'data[7]' name = 'payTime' selected = '$parent.info.paymentTiming'></in-filter-choose>
+      <in-filter-choose options = 'data[7]' name = 'payTime' selected = '$parent.info.paymentTiming' required = 'true'></in-filter-choose>
       <span ng-show = '$parent.formOne.payTime.$error.required' class = 'error'>Please fill out this field.</span>
     </div>
 
@@ -51,13 +51,13 @@
     <!-- Payment Due On input-->
     <div ng-if = '!(($parent.info.frequencyType == "Other")||($parent.info.frequencyType =="Monthly"))' class='col-md-4 form-row'>
       <span>Payment Due On<span class = "sup">*</span><span>
-      <in-filter-choose options = 'data[6]' name = 'payDueOn' selected = '$parent.info.paymentDueOn'></in-filter-choose>
+      <in-filter-choose options = 'data[6]' name = 'payDueOn' selected = '$parent.info.paymentDueOn' required = 'true'></in-filter-choose>
       <span ng-show = '$parent.formOne.payDueOn.$error.required' class = 'error'>Please fill out this field.</span>
     </div>
     <!-- Payment Due Day input-->
-    <div ng-if = '$parent.info.frequencyType != "Other"' class='col-md-4 form-row'>
-      <span>Payment Due Day<span class = "sup">*</span><span>
-      <in-filter-choose options = 'data[5]' name = 'payDueDay' selected = '$parent.info.paymentDueDay'></in-filter-choose>
+    <div ng-if = '$parent.info.frequencyType != "Other" && (($parent.info.frequencyType == "Monthly") || ($parent.info.paymentDueOn == "Specific Day of Period"))' class='col-md-4 form-row'>
+      <span>Payment Due Day<span class = "sup">*</span></span>
+      <in-filter-choose options = 'data[5]' name = 'payDueDay' selected = '$parent.info.paymentDueDay' required = 'true'></in-filter-choose>
       <span ng-show = '$parent.formOne.payDueDay.$error.required' class = 'error'>Please fill out this field.</span>
     </div>
     <!-- Accounting Cost Center input-->

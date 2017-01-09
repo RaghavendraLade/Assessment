@@ -7,14 +7,6 @@
         $scope.tableInfo = {};
       paymentInfo.dropDownValues().then(function(response){
         var resp = angular.copy(response)
-        // var len = data[0].length;
-        // for(var i = 0; i<len; i++){
-        //   (data[0])[i].path = ((data[0])[i].path).split("\\")[2];
-        // }
-        // len = data[1].length;
-        // for(var i = 0; i<len; i++){
-        //   (data[1])[i].path = ((data[1])[i].path).split("\\")[2];
-        // }
         var data = [];
         var len = resp.length;
         for(var i = 0; i< len; i++){
@@ -81,12 +73,6 @@
         $scope.editPage = true;
       }
 
-      $scope.changeInFq = function(changed){
-        if(changed == 'Annually' || changed == 'Quarterly' || changed == 'Semi-Annually' ){
-          $scope.info.paymentDueOn = 'Specific Day of Period';
-        }
-
-      }
     }]);
 
 

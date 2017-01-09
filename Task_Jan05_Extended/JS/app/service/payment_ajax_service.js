@@ -12,7 +12,7 @@
           .then(function(response){
             return response.data;
           }, function(error){
-             return $q.reject(error);
+             return response;
           });
       }
 
