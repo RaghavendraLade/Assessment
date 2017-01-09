@@ -2,6 +2,10 @@
   padding : 15px;
 }
 
+.form-content{
+  height:400px;
+  overflow-y: auto;
+}
 .form-content .sup{
   color: #ff0000;
   font-weight: bolder;
